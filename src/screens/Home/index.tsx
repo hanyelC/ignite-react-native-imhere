@@ -57,7 +57,7 @@ export function Home() {
           placeholder="Nome do participante"
           placeholderTextColor="#6B6B6B"
           value={newParticipantName}
-          onChange={(e) => setNewParticipantName(e.nativeEvent.text)}
+          onChangeText={setNewParticipantName}
         />
 
         <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
