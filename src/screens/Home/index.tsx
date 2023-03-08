@@ -12,10 +12,8 @@ import { Participant } from '../../components/Participant'
 
 import { styles } from './styles'
 
-const list = ['foo', 'baz', 'rodrigo', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-
 export function Home() {
-  const [participants, setParticipants] = useState(list)
+  const [participants, setParticipants] = useState([])
   const [newParticipantName, setNewParticipantName] = useState('')
 
   function handleParticipantAdd() {
