@@ -3,9 +3,15 @@ import { Participant } from '../../components/Participant'
 
 import { styles } from './styles'
 
+const list = ['foo', 'baz', 'rodrigo']
+
 export function Home() {
   function handleParticipantAdd() {
     console.log('click')
+  }
+
+  function handleParticipantRemove(name: string) {
+    console.log('remove', name)
   }
 
   return (
@@ -25,8 +31,13 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant name="foo" />
-      <Participant name="baz" />
+      {list.map((name) => (
+        <Participant
+          key={name}
+          name={name}
+          onRemove={() => handleParticipantRemove(name)}
+        />
+      ))}
     </View>
   )
 }
