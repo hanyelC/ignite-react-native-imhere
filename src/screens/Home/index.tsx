@@ -1,9 +1,16 @@
-import { Text, TextInput, TouchableOpacity, View } from 'react-native'
+import {
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native'
+
 import { Participant } from '../../components/Participant'
 
 import { styles } from './styles'
 
-const list = ['foo', 'baz', 'rodrigo']
+const list = ['foo', 'baz', 'rodrigo', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
 export function Home() {
   function handleParticipantAdd() {
@@ -31,13 +38,15 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      {list.map((name) => (
-        <Participant
-          key={name}
-          name={name}
-          onRemove={() => handleParticipantRemove(name)}
-        />
-      ))}
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {list.map((name) => (
+          <Participant
+            key={name}
+            name={name}
+            onRemove={() => handleParticipantRemove(name)}
+          />
+        ))}
+      </ScrollView>
     </View>
   )
 }
